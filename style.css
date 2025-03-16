@@ -1,0 +1,85 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #e7ecff;
+}
+
+nav {
+    height: 80px;
+    background: rgb(0, 0, 39);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+}
+
+.containerIntro {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 95%;
+    margin: auto;
+}
+
+.containerProjects {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 95%;
+    margin: auto;
+}
+
+.contentProjects {
+    text-align: left;
+    margin-left: 5px;
+    margin-right: 40px;
+}
+
+.contentProjectsR {
+    text-align: left;
+    margin-left: 50px;
+    margin-right: 0px;
+}
+
+.contentIntro {
+    text-align: left;
+    margin-left: 50px;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+.headshot {
+    margin-left: 0px;
+    margin-top: 25px;
+}
+
+.logo {
+    color: #FFF;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 0 2rem;
+}
+
+nav a {
+    color:#FFF;
+    font-size: 1rem;
+    padding: 0 1.5rem;
+}
+
+contentProjectsPage {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 95%;
+    margin: auto;
+}
