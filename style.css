@@ -1,17 +1,18 @@
-*{
+/* ===== Global Reset ===== */
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode',
+                 'Lucida Grande', 'Lucida Sans',
+                 Arial, sans-serif;
 }
 
 body {
-    margin: 0;
-    padding: 0;
     background-color: #e7ecff;
 }
 
+/* ===== Navigation ===== */
 nav {
     height: 80px;
     background: rgb(0, 0, 39);
@@ -21,65 +22,279 @@ nav {
     padding: 15px 30px;
 }
 
-.containerIntro {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    width: 95%;
-    margin: auto;
-}
-
-.containerProjects {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    width: 95%;
-    margin: auto;
-}
-
-.contentProjects {
-    text-align: left;
-    margin-left: 5px;
-    margin-right: 40px;
-}
-
-.contentProjectsR {
-    text-align: left;
-    margin-left: 50px;
-    margin-right: 0px;
-}
-
-.contentIntro {
-    text-align: left;
-    margin-left: 50px;
-}
-
-h1 {
-    font-size: 50px;
-}
-
-.headshot {
-    margin-left: 0px;
-    margin-top: 25px;
-}
-
 .logo {
-    color: #FFF;
+    color: #fff;
     font-size: 1.5rem;
     font-weight: bold;
     padding: 0 2rem;
 }
 
 nav a {
-    color:#FFF;
+    color: #fff;
     font-size: 1rem;
     padding: 0 1.5rem;
+    text-decoration: none;
 }
 
-contentProjectsPage {
+nav a:hover {
+    color: darkgray;
+}
+
+/* ===== Intro / Hero Section ===== */
+.containerIntro {
     display: flex;
-    justify-content: flex-start;
     align-items: center;
-    width: 95%;
+    justify-content: center;
+    gap: 4rem;
+
+    min-height: 85vh;
+    padding: 4rem 3rem;
+    width: 100%;
+
+    background: linear-gradient(135deg, #e7ecff, #f4f6ff);
+    animation: fadeIn 0.8s ease-out;
+}
+
+.contentIntro {
+    max-width: 800px;
+    text-align: left;
+}
+
+.headshot {
+    width: 350px;
+    max-width: 100%;
+    border-radius: 12px;
+}
+
+/* ===== Three Column Section ===== */
+.threeColumnSection {
+    background: rgb(146, 146, 185); /* same as nav */
+    padding: 5rem 3rem;
+    min-height: 75vh;          /* ← THIS is key */
+    display: flex;
+    align-items: center;
+}
+
+.threeColumnContainer {
+    max-width: 1200px;
     margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+}
+
+.infoCard {
+    background: #ffffff;
+    padding: 3rem 2.5rem;
+    border-radius: 14px;
+
+    min-height: 420px;         /* ← makes them tall */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;   /* centers text vertically */
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+
+.infoCard h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: rgb(0, 0, 39);
+}
+
+.infoCard p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* ===== Typography ===== */
+h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.2rem;
+    font-weight: normal;
+    line-height: 1.6;
+}
+
+h3 {
+    margin-bottom: 0.5rem;
+}
+
+h4 {
+    font-weight: normal;
+}
+
+/* ===== Projects Section ===== */
+.containerProjects {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 4rem 2rem;
+}
+
+/* CENTER DIVIDER */
+.containerProjects::before {
+    content: "";
+    position: absolute;
+    top: 10%;
+    bottom: 10%;
+    left: 50%;
+    width: 2px;
+    background-color: #000000;
+    transform: translateX(-50%);
+}
+
+.projectsLeft,
+.projectsRight {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Limit content width inside each half */
+.projectsLeft > *,
+.projectsRight > * {
+    max-width: 500px;
+}
+
+/* Icon sizing */
+.projectsIcon {
+    width: 100%;
+    max-width: 280px;
+    margin-top: 2rem;
+}
+
+/* Spaced items (fake bullet points) */
+.projectItem {
+    margin-bottom: 1.75rem;
+}
+
+.projectLine {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+/* ===== Contact Section ===== */
+.footerContact {
+    background-color: #061328; /* dark navy to match banner */
+    color: #ffffff;            /* white text for contrast */
+    padding: 3rem 2rem;        /* vertical + horizontal spacing */
+    text-align: center;         /* center all content */
+}
+
+/* Inner text wrapper */
+.footerContact .footerText {
+    max-width: 800px;           /* keeps content from stretching too wide */
+    margin: 0 auto;
+}
+
+/* Footer headings */
+.footerContact h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.footerContact h3 {
+    font-size: 1.1rem;
+    line-height: 1.8;           /* space between lines, similar to info card spacing */
+}
+
+/* Footer links */
+.footerContact a {
+    color: #ffffff;             /* bright accent for links */
+    text-decoration: none;       /* remove underline */
+}
+
+.footerContact a:hover {
+    text-decoration: underline;  /* subtle hover effect */
+}
+
+.footerContact h3 {
+    font-size: 1.1rem;
+    line-height: 2;  /* taller spacing between lines */
+}
+
+
+/* ===== Animations ===== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== Mobile Styles ===== */
+@media (max-width: 768px) {
+
+    .threeColumnSection {
+        padding: 3.5rem 1.5rem;
+    }
+
+    .threeColumnContainer {
+        grid-template-columns: 1fr;
+        gap: 1.8rem;
+    }
+
+    .infoCard {
+        text-align: center;
+    }
+
+    nav {
+        flex-direction: column;
+        height: auto;
+        padding: 1rem;
+        gap: 0.5rem;
+    }
+
+    nav a {
+        padding: 0.5rem;
+        font-size: 0.95rem;
+    }
+
+    .containerIntro {
+        flex-direction: column;
+        text-align: center;
+        min-height: auto;
+        padding: 3rem 1.5rem;
+        gap: 2rem;
+    }
+
+    .contentIntro {
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .headshot {
+        width: 220px;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    h2 {
+        font-size: 1.05rem;
+    }
+
+    .containerProjects {
+        flex-direction: column;
+        width: 100%;
+        gap: 2rem;
+    }
+
+    .contentProjects,
+    .contentProjectsR {
+        text-align: center;
+    }
 }

@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>MontroyCyber</title>
-        <link rel="stylesheet" href="ProjectsStyle/style.css">
+        <link rel="stylesheet" href="ProjectsStyle/projects.css">
 
         <style>
             a {
@@ -22,38 +22,56 @@
             <div> <a href="index.html" class="logo"> MontroyCyber</a>
             </div>
             <div class="nav-items"></div>
-            <b><a href="index.html">Home</a>
-                <a href="projects.html">Projects Blog</a>
-                <a href="resume.html">Contact & Resume</a>
+                <b><a href="index.html">Home</a>
+                <a href="aboutMe.html">About Me</a>    
+                <a href="projects.html">Projects</a>
+                <a href="competitions.html">Competitions</a>
+                <a href="resume.html">Resume</a>
+                <a href="contact.html">Contact</a>
             </b>
         </nav>
 
-        <div class="containerIntro">
-            <div class="textContent">
-                <h1><b><a href="NCLSpring2025.html">National Cyber League Spring 2025</a></b></h1>
-                <hr>
-                <h5>I reflect on my latest cybersecurity competition, find my scores and methods here!</h5>
+        <section class="projects-page">
+
+            <div class="projects-grid">
+
+                <a href="objDetection.html" class="project-link">
+                    <div class="project-card">
+                        <h3>Using AI and ML to Bolster Operational Security of Surveillence </h3>
+                        <p>US CYBERCOM CyberRECon 2026</p>
+                    </div>
+                </a>
+
+                <a href="TCP_Speedtests.html" class="project-link">
+                    <div class="project-card">
+                        <h3>TCP Reno vs. TCP Cubic RTT Virtual Network Testing</h3>
+                        <p>In a mininet simulation, what factors allow TCP Reno or TCP Cubic to be the faster protocol</p>
+                    </div>
+                </a>
+
+                <a href="forensicReport.html" class="project-link">
+                    <div class="project-card">
+                        <h3>Digital Forensics Investigation and Report</h3>
+                        <p>Given a disk image, I performed a forensic analysis and reported my findings.</p>
+                    </div>
+                </a>
+
+                <a href="WebsiteCoding.html" class="project-link">
+                    <div class="project-card">
+                        <h3>Vibe Coding this Website and Learning the Interworkings of HTML</h3>
+                        <p>I walk through what I learned when coding this website the first time. I have done a huge revamp and I will be updating this soon.</p>
+                    </div>
+                </a>
+
+                <div class="project-link">
+                    <div class="project-card">
+                        <h3>Building a RFID Badge Reader & Cloner with a Raspberry Pi Zero W & PN5180</h3>
+                        <p>Messing around and learning about RFID.</p>
+                    </div>
+                </div>
             </div>
-            <div class="contentProjectsPage">
-                <img src="photos/NCLlogo.png" width="400" class="headshot">
-            </div>
-        </div>
-        
-        <br>
-        <hr>
-        <br>
-        <div class="containerProjects"> 
-            <img src="photos/HTMLphoto.png" width="400" class="projectsIcon">
-            <div class="contentProjectsR">
-                <p>
-                     <h1><b><a href="projectHTML.html">Building an HTML Website From Scratch</a></b></h1>
-                    <hr>
-                    <h3>I went from having no HTML experience to building this website, read how I did it here.</h3>
-               
-            </div>
-        </div>
-        <br>
-        <hr>
+
+        </section>
 
     </body>
 </html>
