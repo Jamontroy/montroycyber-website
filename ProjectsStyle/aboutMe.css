@@ -1,0 +1,182 @@
+/* ===== Global Reset ===== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode',
+                 'Lucida Grande', 'Lucida Sans',
+                 Arial, sans-serif;
+}
+
+body {
+    background-color: #e7ecff;
+}
+
+/* ===== Navigation ===== */
+nav {
+    height: 80px;
+    background: rgb(0, 0, 39);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+}
+
+.logo {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 0 2rem;
+}
+
+nav a {
+    color: #fff;
+    font-size: 1rem;
+    padding: 0 1.5rem;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: darkgray;
+}
+
+/* ===== About Page ===== */
+.about-page {
+    min-height: calc(100vh - 80px);
+    padding: 4rem 2rem;
+}
+
+/* ===== Photo Grid ===== */
+.slide {
+    position: static;
+    inset: unset;
+}
+.slide-deck {
+    max-width: 1100px;
+    margin: 0 auto 3.5rem auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+
+    animation: fadeUp 0.6s ease-out;
+}
+
+.slide-deck img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+
+    border-radius: 14px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+
+    transition: transform 0.25s ease;
+}
+
+/* Subtle lift on hover (matches rest of site) */
+.slide-deck img:hover {
+    transform: translateY(-4px);
+}
+
+
+/* Navigation dots */
+.dots {
+    text-align: center;
+    margin-top: 12px;
+}
+
+.dot {
+    height: 12px;
+    width: 12px;
+    margin: 0 4px;
+    display: inline-block;
+    border-radius: 50%;
+    background-color: #bbb;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #0b1d3a;
+}
+
+/* ===== About Text Box ===== */
+.about-text-box {
+    max-width: 1100px;          /* wider than before */
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 14px;
+    padding: 4rem 3rem;          /* more vertical & horizontal padding */
+    min-height: 500px;           /* ensures box has noticeable vertical size */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.18);
+
+    animation: fadeUp 0.6s ease-out;
+}
+
+.about-text-box h1 {
+    font-size: 2.6rem;
+    margin-bottom: 2rem;
+    color: rgb(0, 0, 39);
+    text-align: center;
+}
+
+.about-text-box p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+/* ===== Mobile Styles ===== */
+@media (max-width: 768px) {
+
+    nav {
+        flex-direction: column;
+        height: auto;
+        padding: 1rem;
+        gap: 0.5rem;
+    }
+
+    nav a {
+        padding: 0.5rem;
+        font-size: 0.95rem;
+    }
+
+    .slide-deck {
+        max-width: 90%;
+        margin-bottom: 2rem;
+    }
+
+    .about-text-box {
+        max-width: 90%;
+        padding: 3rem 2rem;
+        min-height: auto; /* let height adjust naturally on mobile */
+    }
+
+    .about-text-box h1 {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 900px) {
+    .slide-deck {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .slide-deck {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
